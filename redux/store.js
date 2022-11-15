@@ -4,7 +4,7 @@ import initialState from './initialState';
 const subreducers = {
 }
 
-const reducer = combineReducers(subreducers);
+const reducer = combineReducers(state.posts);
 const store = createStore(
   reducer,
   initialState,
