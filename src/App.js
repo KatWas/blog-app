@@ -2,6 +2,7 @@ import {Container} from 'react-bootstrap';
 import {Route, Routes} from 'react-router-dom';
 import Header from './components/views/Header';
 import Footer from './components/views/Footer';
+import NavBar from 'react-bootstrap/Navbar';
 import Home from './components/pages/Home';
 import SinglePost from './components/pages/SinglePost';
 import PostAdd from './components/pages/PostAdd';
