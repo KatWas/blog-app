@@ -1,15 +1,19 @@
-import { createStore, combineReducers } from 'redux';
-import initialState from './initialState';
-import postsRedux from './postsRedux';
+import {createStore, combineReducers } from 'redux';
+import postsReducer from './postsRedux';
+import initialState from '../redux/InitialState';
+import categoriesReducer from './categoriesRedux';
 
 const subreducers = {
-}
+    posts: postsReducer,
+    categories: categoriesReducer,
+};
 
-const reducer = combineReducers({posts:postsRedux});
+const reducer = combineReducers(subreducers);
+
 const store = createStore(
-  reducer,
-  initialState,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+    reducer,
+    initialState,
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 
 export default store;
