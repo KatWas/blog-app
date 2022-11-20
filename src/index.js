@@ -1,13 +1,13 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
-import { Provider } from 'react-redux';
-import store from './redux/store'
+import ReactDOM from 'react-dom/client';
 import App from './App';
-import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import store from './redux/store';
 import { BrowserRouter } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-
-ReactDOM.render((
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Provider store={store}>
@@ -15,5 +15,4 @@ ReactDOM.render((
       </Provider>
     </BrowserRouter>
   </React.StrictMode>
-),
-document.getElementById('root'));
+);

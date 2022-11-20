@@ -1,30 +1,35 @@
-import {Container} from 'react-bootstrap';
-import {Route, Routes} from 'react-router-dom';
-import Header from './components/Container/Header';
-import Footer from './components/Container/Footer';
-import NavBar from 'react-bootstrap/Navbar';
+import React from 'react';
+import { Container } from 'react-bootstrap';
+import { Routes, Route } from 'react-router-dom';
 import Home from './components/pages/Home';
-import SinglePost from './components/pages/SinglePost';
-import PostAdd from './components/pages/PostAdd';
-import PostEdit from './components/pages/PostEdit';
+import Add from './components/pages/Add';
+import Edit from './components/pages/Edit';
 import About from './components/pages/About';
 import NotFound from './components/pages/NotFound';
+import NavBar from './components/common/NavBar';
+import Footer from './components/views/Footer.js';
+import SinglePost from './components/pages/SinglePost';
+import Categories from './components/pages/Categories.js';
+import Category from './components/pages/Category';
 
 
-
-const App = () => (
-<Container>
-  <Header />
-  <Routes>
-    <Route path="/" element={<Home />} />
-    <Route path="/post/:id" element={<SinglePost />} />
-    <Route path="/post/add" element={<PostAdd />} />
-    <Route path="/post/edit/:id" element={<PostEdit />} />
-    <Route path="/about" element={<About />} />
-    <Route path="*" element={<NotFound />} />
-  </Routes>
-  <Footer />
-</Container>
-)
+const App = () => {
+  return (
+    <Container>
+      <NavBar/>
+        <Routes>
+          <Route path="/" element={<Home/>}/>
+          <Route path="/post/:postId" element={<SinglePost/>}/>
+          <Route path="/post/add" element={<Add/>}/>
+          <Route path="/post/edit/:postId" element={<Edit/>}/>
+          <Route path="/Categories" element={<Categories/>}/>
+          <Route path="/Category/:category" element={<Category/>} />
+          <Route path="/about" element={<About/>}/>
+          <Route path="*" element={<NotFound/>}/>
+        </Routes>
+      <Footer/>
+    </Container>
+  )
+}
 
 export default App;
