@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux/es/exports';
 import { getAllCategories } from '../../redux/categoriesRedux';
-import List from '../views/List';
+import List from '../views/List.js';
 
 const Categories = () => {
     const allCategories = useSelector(getAllCategories);
